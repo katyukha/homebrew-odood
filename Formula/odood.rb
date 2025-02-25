@@ -5,8 +5,8 @@ class Odood < Formula
   sha256 "99b02843200adcd9c7dcada1dd8326e07c17d1d5c26c5782dedab6ed935c11ea"
   license "MPL-2.0"
 
-  depends_on "ldc" => :build
   depends_on "dub" => :build
+  depends_on "ldc" => :build
   depends_on "libpq"
   depends_on "libzip"
   depends_on "python3"
@@ -19,7 +19,7 @@ class Odood < Formula
   end
 
   test do
-    system "odood" "--version"
+    system "#{bin}/odood --version"
     # TODO: Add some real tests (for example create instance and remove it)
   end
 end
