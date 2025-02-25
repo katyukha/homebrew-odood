@@ -19,8 +19,7 @@ class Odood < Formula
   end
 
   test do
-    system "#{bin}/odood --version"
+    system "#{bin}/odood", "--version"
     # TODO: Add some real tests (for example create instance and remove it)
   end
 end
-
