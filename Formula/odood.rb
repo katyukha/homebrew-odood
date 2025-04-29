@@ -1,8 +1,8 @@
 class Odood < Formula
   desc "Manage local development odoo installations with ease"
   homepage "https://katyukha.github.io/Odood/"
-  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.2.2-rc.1.tar.gz"
-  sha256 "99b02843200adcd9c7dcada1dd8326e07c17d1d5c26c5782dedab6ed935c11ea"
+  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "c6b4ce396e5284b97cd9fb4fc2e0e3e003a575708dbe48b9aa651240059c243b"
   license "MPL-2.0"
 
   depends_on "dub" => :build
@@ -12,8 +12,9 @@ class Odood < Formula
   depends_on "python3"
 
   def install
-    system "dub", "build", "--build=release"
-    system "dub", "build", "--build=release", "--config=bash-autocomplete"
+    File.write("./subpackages/lib/data/ODOOD_VERSION", version)
+    system "dub", "build", "--build=release-debug"
+    system "dub", "build", "--build=release-debug", "--config=bash-autocomplete"
     bin.install "./build/odood"
     bash_completion.install "./build/odood.bash"
   end
