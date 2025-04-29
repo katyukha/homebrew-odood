@@ -11,12 +11,19 @@ class Odood < Formula
   depends_on "libzip"
   depends_on "python3"
 
+  depends_on "openldap"
+
+  uses_from_macos "openldap"
+
   def install
     File.write("./subpackages/lib/data/ODOOD_VERSION", version)
     system "dub", "build", "--build=release-debug"
-    system "dub", "build", "--build=release-debug", "--config=bash-autocomplete"
     bin.install "./build/odood"
-    bash_completion.install "./build/odood.bash"
+
+    # Autocomplete post-build commands does not work
+    # TODO: Maybe build it via separate job
+    # system "dub", "build", "--build=release-debug", "--config=bash-autocomplete"
+    # bash_completion.install "./build/odood.bash"
   end
 
   test do
