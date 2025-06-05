@@ -1,17 +1,18 @@
 class Odood < Formula
   desc "Manage local development odoo installations with ease"
   homepage "https://katyukha.github.io/Odood/"
-  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "c6b4ce396e5284b97cd9fb4fc2e0e3e003a575708dbe48b9aa651240059c243b"
+  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.4.1-alpha.1.tar.gz"
+  sha256 "903a7d62f2198144978b4717c1c42d5fa728203666c1b2b9c0b60a7c7187f929"
   license "MPL-2.0"
 
   depends_on "dub" => :build
   depends_on "ldc" => :build
   depends_on "libpq"
   depends_on "libzip"
-  depends_on "python3"
-
   depends_on "openldap"
+  depends_on "openssl@3"
+  depends_on "pyenv"
+  depends_on "python@3.13"
 
   uses_from_macos "openldap"
 
@@ -28,7 +29,7 @@ class Odood < Formula
 
   test do
     system "#{bin}/odood", "--version"
-    system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18"
+    system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18", "--pyenv"
     # TODO: Add some real tests (for example create instance and remove it)
   end
 end
