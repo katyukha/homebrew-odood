@@ -1,8 +1,8 @@
 class Odood < Formula
   desc "Manage local development odoo installations with ease"
   homepage "https://katyukha.github.io/Odood/"
-  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.4.1-alpha.2.tar.gz"
-  sha256 "75ed6269ab7dedfd2b98ba432ef76b8d08a1c5728864c9a7875d773dfee3057c"
+  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.4.1-alpha.3.tar.gz"
+  sha256 "457f598fa17490c7a560f7184cd92e1478e8908aca552e529fb8663b1e8cd4bd"
   license "MPL-2.0"
 
   depends_on "dub" => :build
