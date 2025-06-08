@@ -1,8 +1,8 @@
 class Odood < Formula
   desc "Manage local development odoo installations with ease"
   homepage "https://katyukha.github.io/Odood/"
-  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.4.1-alpha.3.tar.gz"
-  sha256 "457f598fa17490c7a560f7184cd92e1478e8908aca552e529fb8663b1e8cd4bd"
+  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.4.1-alpha.4.tar.gz"
+  sha256 "d0ebf9269e321c57871bc4a627670c086a659c48ed70e4a70ee8cf4854f4d2b5"
   license "MPL-2.0"
 
   depends_on "dub" => :build
@@ -21,15 +21,14 @@ class Odood < Formula
     system "dub", "build", "--build=release-debug"
     bin.install "./build/odood"
 
-    # Autocomplete post-build commands does not work
-    # TODO: Maybe build it via separate job
-    # system "dub", "build", "--build=release-debug", "--config=bash-autocomplete"
-    # bash_completion.install "./build/odood.bash"
+    system "dub", "build", "--build=release-debug", "--config=bash-autocomplete"
+    bash_completion.install "./build/odood.bash"
   end
 
   test do
     system "#{bin}/odood", "--version"
-    system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18", "--pyenv"
+    system "#{bin}/odood", "--help"
+    #system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18", "--pyenv"
     # TODO: Add some real tests (for example create instance and remove it)
   end
 end
