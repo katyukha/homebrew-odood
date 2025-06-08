@@ -28,7 +28,7 @@ class Odood < Formula
   test do
     system "#{bin}/odood", "--version"
     system "#{bin}/odood", "--help"
-    #system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18", "--pyenv"
+    # system "#{bin}/odood", "init", "-v", "18", "-i", "odood-18", "--pyenv"
     # TODO: Add some real tests (for example create instance and remove it)
   end
 end
