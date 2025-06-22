@@ -6,10 +6,11 @@ class Odood < Formula
   license "MPL-2.0"
 
   bottle do
-    root_url "https://github.com/katyukha/homebrew-odood/releases/download/odood-0.4.1-alpha.4"
-    sha256 arm64_sequoia: "c5fc95c62f7d90d04d86bb962cfcb34726ae3a5de2d0cf2577320f4621a86e2f"
-    sha256 arm64_sonoma:  "85d1259d830d7f3ee241c7429d21c705a507bddcf7fc9f6fbbac303f1802fc7e"
-    sha256 ventura:       "18475454fbf01e92d9137ab547b5ec51ed956bc35e5f3ca8b4726fd5f0fd67e3"
+    root_url "https://github.com/katyukha/homebrew-odood/releases/download/odood-0.4.2"
+    sha256                               arm64_sequoia: "c6939e84c65e694342d0a6c00652be05a357607cdbb9981c0ca68c2ce61941c8"
+    sha256                               arm64_sonoma:  "beb1d0f62c0875f27005669137e21ea542b27304a14a083434f943a3ccedd827"
+    sha256                               ventura:       "19af3fba5c0fa6fc9b416482897e739bbaffa4aa966a0c8cfe32dedf4e1da9db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1b552a67d3e4cf172ca5f1c82d23b3fc1e7b0c08e2e3dddd7fe36f5dbcd9074"
   end
 
   depends_on "dub" => :build
