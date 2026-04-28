@@ -5,6 +5,12 @@ class Odood < Formula
   sha256 "0e096a713f022ca42332bc7cfb056c406a04bb83f5533694899ba824f3fd0c9f"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://github.com/katyukha/homebrew-odood/releases/download/odood-0.6.1"
+    sha256                               arm64_sequoia: "b42101db006c94942d91108582afba7c8b54c325a5eb022516080a44f4c46588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06b33e2f7a00e589b780e7af6ac492ff04acbb830629869dfed2dbff06248d61"
+  end
+
   depends_on "dub" => :build
   depends_on "ldc" => :build
   depends_on "libpq"
