@@ -5,7 +5,6 @@ class Odood < Formula
   sha256 "9fbe6cd01ef794d0746d5c7d2fae04e603508b9f002e44a3ac06598cbb05005d"
   license "MPL-2.0"
 
-
   depends_on "dub" => :build
   depends_on "ldc" => :build
   depends_on "libpq"
