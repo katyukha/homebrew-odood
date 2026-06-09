@@ -1,15 +1,10 @@
 class Odood < Formula
   desc "Manage local development odoo installations with ease"
   homepage "https://katyukha.github.io/Odood/"
-  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "0e096a713f022ca42332bc7cfb056c406a04bb83f5533694899ba824f3fd0c9f"
+  url "https://github.com/katyukha/Odood/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "9fbe6cd01ef794d0746d5c7d2fae04e603508b9f002e44a3ac06598cbb05005d"
   license "MPL-2.0"
 
-  bottle do
-    root_url "https://github.com/katyukha/homebrew-odood/releases/download/odood-0.6.1"
-    sha256                               arm64_sequoia: "b42101db006c94942d91108582afba7c8b54c325a5eb022516080a44f4c46588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06b33e2f7a00e589b780e7af6ac492ff04acbb830629869dfed2dbff06248d61"
-  end
 
   depends_on "dub" => :build
   depends_on "ldc" => :build
